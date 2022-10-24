@@ -247,9 +247,23 @@ class DoccanoClient:
         Returns:
             UserDetails: the updated user login info
         """
-        pass
         return self._user_details_respository.update_current_user_details(
             username=username, first_name=first_name, last_name=last_name
+        )
+
+    def create_new_user(self, username: str, password: str, confirm_password: str):
+        """Create new user
+
+        Args:
+            username (str): the username of the user thats to be created
+            password (str): the password to set for the new user
+            confirm_password (str): confirm the password to set for the new user
+
+        Returns:
+            Not Sure Yet
+        """
+        return self._user_details_respository.create_new_user(
+            username=username, password=password, confirm_password=password
         )
 
     def search_users(self, name: str = "") -> List[User]:
